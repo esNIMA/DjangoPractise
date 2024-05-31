@@ -8,6 +8,7 @@ def courses(request):
     return render(request, "courses_app/courses.html", {"courses": courses})
 
 
-def course_detail(request, id): 
+def course_detail(request, id, views): 
     course = Course.objects.get(id= id)
+    views = Course.objects.update()
     return render(request, "courses_app/course_detail.html", {"course" : course})
